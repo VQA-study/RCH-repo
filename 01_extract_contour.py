@@ -34,7 +34,7 @@ _, binary_edges = cv2.threshold(edges, 50, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(binary_edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # 외곽선 탐지, CHAIN_APPROX_SIMPLE: 노이즈 점 제거.
 
 contour_image = np.zeros_like(original)  # 검은 빈 화면 생성.
-cv2.drawContours(contour_image, contours, -1, (0, 0, 255), 1)  # 빨간간 선 설정.
+cv2.drawContours(contour_image, contours, -1, (0, 0, 255), 1)  # 빨간 선 설정.
 
 for contour in contours:
     perimeter = cv2.arcLength(contour, True)  # Contour 둘레 계산.
